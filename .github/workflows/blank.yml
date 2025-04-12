@@ -1,4 +1,3 @@
-needs: build
 name: Simple flows
 
 on:
