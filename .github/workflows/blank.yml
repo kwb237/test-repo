@@ -1,4 +1,5 @@
-name: CI
+needs: build
+name: Simple flows
 
 on:
   push:
@@ -16,11 +17,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   test:
-   runs-on: ubuntu-latest
-   steps:
-     - name: check uptime
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Uptime
         run: uptime
-     - name: cpu info
+      - name: Cpu info
         run: nproc
-     - name: kernel info
+      - name: kernel info 
         run: uname -r
